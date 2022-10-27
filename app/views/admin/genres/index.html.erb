@@ -1,0 +1,11 @@
+
+
+<% @genres.each do |genre| %>
+  <%= genre.name %>
+<% end %>
+
+<%= form_with model:@genre, url: admin_genres_path do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit "登録" %>
+<% end %>
