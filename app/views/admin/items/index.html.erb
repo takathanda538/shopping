@@ -1,5 +1,7 @@
 <% @items.each do |item| %>
+  <%= link_to admin_item_path(item) do %>
   <%= item.name %>
+  <% end %>
 <% end %>
 
 <%= link_to "新規登録", new_admin_item_path %>
