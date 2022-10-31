@@ -1,0 +1,15 @@
+<% @cart_items.each do |cart_item| %>
+  <%= cart_item.item.name %>
+  <%= cart_item.item.price %>
+  <%= form_with model: cart_item, url: cart_item_path(cart_item), method: :patch do |f| %>
+    <%= f.select :amount, *[1..10], {selected: cart_item.amount.to_i} %>
+  <%= f.submit "変更", class: 'btn btn01 btn-sm' %>
+  <% end %>
+  小計:<%= cart_item.sum_of_price %>
+  <%= link_to "削除する", cart_item_path(cart_item.id), method: :delete, class: 'btn btn02 btn-sm' %>
+<% end %>
+
+
+合計:<%= @total.round.to_s(:delimited)%>
+<%= link_to "買い物を続ける", items_path %>
+<%= link_to "注文情報入力に進む", new_order_path %>
