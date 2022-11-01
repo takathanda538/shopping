@@ -1,13 +1,9 @@
-<nav class="navbar navbar-expand-lg navbar-light">
-  <div class="container">
-    <a class="navbar-brand p-3" href="/">𝓼𝓱𝓸𝓹𝓹𝓲𝓷𝓰</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                  aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav ml-auto">
-      <% if admin_signed_in? %>
+<h1>𝓼𝓱𝓸𝓹𝓹𝓲𝓷𝓰</h1>
+
+    <div id="sp-menu">
+      <h2>MENU</h2>
+      <ul>
+        <% if admin_signed_in? %>
         <li class="nav-item">
           <%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: 'nav-link text-dark' %>
         </li>
@@ -52,5 +48,11 @@
       <% end %>
       </ul>
     </div>
-  </div>
-</nav>
+
+    <div id="hm-icon">
+      <a class="menu-trigger" href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+    </div>
