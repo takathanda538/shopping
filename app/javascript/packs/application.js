@@ -13,8 +13,7 @@ import "popper.js";
 import "bootstrap";
 import "../stylesheets/application"
 import '@fortawesome/fontawesome-free/js/all'
-import "./jpostal"
-import "./address_autofill"
+import "./jquery.min.js"
 import "./practice.js"
 
 Rails.start()

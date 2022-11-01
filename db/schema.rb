@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2022_10_30_023756) do
     t.integer "customer_id", null: false
     t.string "name"
     t.integer "postal_code", null: false
+    t.integer "prefectur", null: false
     t.string "address", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -48,6 +49,7 @@ ActiveRecord::Schema.define(version: 2022_10_30_023756) do
     t.string "last_name", null: false
     t.string "first_name", null: false
     t.integer "postal_code", null: false
+    t.integer "prefectur", null: false
     t.string "address", null: false
     t.string "phone_number", null: false
     t.boolean "is_deleted", default: false, null: false
@@ -94,6 +96,7 @@ ActiveRecord::Schema.define(version: 2022_10_30_023756) do
   create_table "orders", force: :cascade do |t|
     t.integer "customer_id", null: false
     t.integer "postal_code", null: false
+    t.string "prefectur", null: false
     t.string "address", null: false
     t.string "name"
     t.integer "shipping_cost"
