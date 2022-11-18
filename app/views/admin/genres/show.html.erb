@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <% @genres.each do |genre| %>
+        <%= link_to admin_item_path(genre) do %>
+          <%= genre.name %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
