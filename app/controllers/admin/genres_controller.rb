@@ -10,16 +10,21 @@ class Admin::GenresController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
 
+  def show
+    @genre = Genre.find(params[:id])
+    @genres = @genre.items
+  end
+
   def edit
     @genre = Genre.find(params[:id])
   end
-  
+
   def update
     @genre = Genre.find(params[:id])
     @genre.update(genre_params)
     redirect_to admin_genres_path
   end
-    
+
   private
 
   def genre_params

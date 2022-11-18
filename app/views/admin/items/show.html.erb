@@ -1,10 +1,17 @@
-<h1>Admin::Items#show</h1>
-<p>Find me in app/views/admin/items/show.html.erb</p>
-
-<%= @item.name %>
-<%= @item.introduction %>
-<%= @item.price %>
-<%= @item.is_active %>
-<%= @item.genre.name %>
-<%= link_to "編集する",edit_admin_item_path(@item.id),class: 'btn  btn01 col-sm-2' %>
-
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div>
+        
+      <p>商品名:<%= @item.name %></p>
+      <p>商品説明:<%= @item.introduction %></p>
+      <p>商品価格:<%= @item.price %>円</p>
+      <p>販売状況:<%= @item.is_active %></p>
+      <p>ジャンル:<%= @item.genre.name %></p>
+      <button type="button" class="btn btn-outline-primary">
+        <%= link_to "編集する",edit_admin_item_path(@item.id)%>
+      </button>
+      </div>
+    </div>
+  </div>
+</div>

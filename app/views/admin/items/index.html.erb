@@ -1,7 +1,33 @@
-<% @items.each do |item| %>
-  <%= link_to admin_item_path(item) do %>
-  <%= item.name %>
-  <% end %>
-<% end %>
-
-<%= link_to "新規登録", new_admin_item_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <% @genres.each do |genre| %>
+      <button type="button" class="btn btn-outline-primary">
+        <%= link_to admin_genre_path(genre) do %>
+          <%= genre.name %>
+        <% end %>
+      </button>
+      <% end %>
+    </div>
+    
+    <div class="col-md-8">
+      <div class="row">
+      <% @items.each do |item| %>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><%= link_to admin_item_path(item) do %><%= item.name %><% end %></h5>
+              <p class="card-text"><%= item.introduction %></p>
+              <p class="card-text"><small class="text-muted"><%= item.price%></small></p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      </div>
+      <button type="button" class="btn btn-outline-primary">
+        <%= link_to "新規登録", new_admin_item_path %>
+      </button>
+    </div>
+  </div>
+</div>
